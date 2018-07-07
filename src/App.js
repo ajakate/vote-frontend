@@ -1,16 +1,45 @@
 import React, { Component } from 'react';
+import Button from "@material-ui/core/es/Button/Button";
+import BallotHeader from "./BallotHeader";
 import './App.css';
+import BallotContest from "./BallotContest";
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {loaded: false};
+  }
+
+  async componentWillMount () {
+    const json = await fetch('http://localhost:3000/elections/123?token=12345');
+    json.json().then(then => {
+      this.setState(then);
+      this.setState({loaded: true});
+    })
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to your Election</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+    return this.state.loaded && (
+      <div className="App-container">
+        <BallotHeader
+          name={this.state.name}
+          description={this.state.description}
+        />
+        {
+          this.state.contests.map(contest => {
+            return (
+            <BallotContest
+              name={contest.name}
+              description={contest.description}
+              options={contest.options}
+            />
+            )
+          })
+        }
+        <Button variant="raised" color="primary">
+          Cast Ballot
+        </Button>
       </div>
     );
   }

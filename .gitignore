@@ -24,3 +24,6 @@ yarn-error.log*
 mb.log
 mb.pid
 mb1.log
+
+# intellij
+.idea
