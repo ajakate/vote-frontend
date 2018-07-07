@@ -1,0 +1,41 @@
+{
+    "id": 123,
+    "name": "This is the name of the election",
+    "description" : "This is a description for the election",
+    "contests": [
+        {
+            "id": 1,
+            "name": "name of contest",
+            "description": "description of contest",
+            "options": [
+                {
+                    "name": "option 1",
+                    "id": 1
+                },
+                {
+                    "name": "option 2",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "something else people want to vote on",
+            "description": "some fancy role in some fancy office",
+            "options": [
+                {
+                    "name": "someone no one likes",
+                    "id": 1
+                },
+                {
+                    "name": "someone else no one likes",
+                    "id": 2
+                },
+                {
+                    "name": "Karl Bush",
+                    "id": 3
+                }
+            ]
+        }
+    ]
+}

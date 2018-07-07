@@ -1,0 +1,29 @@
+{
+    "port": 3001,
+    "protocol": "https",
+    "stubs": [
+      {
+        "predicates": [
+          {
+            "equals": {
+              "method": "GET",
+              "path": "/elections/123",
+              "query": { "token": "12345" }
+            }
+          }
+        ],
+        "responses": [
+          {
+            "is": {
+              "statusCode": 200,
+              "headers": {
+                "Location": "http://localhost:3001/elections/123",
+                "Content-Type": "application/xml"
+              },
+              "body": "<%- stringify(filename, 'schemas/ballotResponseBody.json') %>"
+            }
+          }
+        ]   
+      }
+    ]
+  }

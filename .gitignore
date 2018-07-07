@@ -19,3 +19,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# mountebank
+mb.log
+mb.pid
+mb1.log
