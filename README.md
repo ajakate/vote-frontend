@@ -25,4 +25,4 @@ You can access the stub server console by visiting http://localhost:2525 to see 
 ## JSON schema
 
 The app makes some assumptions (in the stub server) on what the API schemas will look like.
-To view the schemas in more detail, look at the json files in the `./templates` directory.
+To view the schemas in more detail, look at the json files in the `./templates/schemas` directory.
