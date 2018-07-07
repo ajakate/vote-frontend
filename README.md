@@ -20,7 +20,12 @@ In order to run the app, you need to run the stub server first on 3001 by runnin
 
 Then start up the app on 3000 by running `yarn start`
 
-You can access the stub server console by visiting http://localhost:2525 to see logs and configurations
+This app is meant to simulate following a personal link for an email,
+so the stubs are ONLY configured to to to respond to
+http://localhost:3000/elections/123?token=12345 (The page parses the election ID
+and the personal token to make an ajax call). Everything else will break the site
+
+You can also access the stub server console by visiting http://localhost:2525 to see logs and configurations
 
 ## JSON schema
 
