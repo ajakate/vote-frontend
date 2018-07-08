@@ -5,7 +5,12 @@ import RadioGroup from "@material-ui/core/es/RadioGroup/RadioGroup";
 import Radio from "@material-ui/core/es/Radio/Radio";
 import FormControlLabel from "@material-ui/core/es/FormControlLabel/FormControlLabel";
 
-const BallotContest = ({name, description, options}) => {
+const BallotContest = ({name, description, options, onChange, selectedValue}) => {
+
+  const isChecked = (option) => {
+    return selectedValue === option.id;
+  };
+
   return (
     <Card className="Contest">
       <CardContent>
@@ -15,10 +20,10 @@ const BallotContest = ({name, description, options}) => {
         <div className="Contest-description">
           {description}
         </div>
-        <RadioGroup>
+        <RadioGroup value={selectedValue} onChange={onChange}>
           {
           options.map(option => (
-            <FormControlLabel value={option.id} control={<Radio/>} label={option.name}/>
+            <FormControlLabel checked={isChecked(option)} value={option.id} control={<Radio/>} label={option.name}/>
           ))
         }
       </RadioGroup>

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Button from "@material-ui/core/es/Button/Button";
 import BallotHeader from "./BallotHeader";
 import './App.css';
-import BallotContest from "./BallotContest";
 import queryString from "query-string";
+import BallotForm from "./BallotForm";
 
 class BallotPage extends Component {
 
@@ -30,20 +29,9 @@ class BallotPage extends Component {
           name={this.state.name}
           description={this.state.description}
         />
-        {
-          this.state.contests.map(contest => {
-            return (
-              <BallotContest
-                name={contest.name}
-                description={contest.description}
-                options={contest.options}
-              />
-            )
-          })
-        }
-        <Button variant="raised" color="primary">
-          Cast Ballot
-        </Button>
+        <BallotForm
+          contests={this.state.contests}
+        />
       </div>
     );
   }
