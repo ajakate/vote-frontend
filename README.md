@@ -5,7 +5,7 @@ This is a first pass at a front end for a voting app (casting a ballot)
 So far the only thing being worked on is the casting of the ballot.
 
 Things todo:
-- Form for submitting a ballot (using [Formik](https://github.com/jaredpalmer/formik))?
+- Form for submitting a ballot (using [Formik](https://github.com/jaredpalmer/formik)?)
 - page for creating elections/sending emails to voters
 
 ## Dependencies:
